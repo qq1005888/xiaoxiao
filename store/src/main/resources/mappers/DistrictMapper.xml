@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- namespace属性：对应的接口文件的全名 -->
+<mapper namespace="cn.tedu.store.mapper.DistrictMapper">
+	<select id="findByParent"
+		resultType="cn.tedu.store.entity.District">
+		SELECT * FROM t_dict_district WHERE parent=#{parent} ORDER BY code
+	</select>
+	
+	<select id="findNameByCode" resultType="java.lang.String">
+	    select name from t_dict_district where code=#{code}
+	</select>
+	
+	<resultMap id="AddressEntityMap" type="cn.tedu.store.entity.Address">
+	    <id column="aid" property="aid" />
+		<result column="province_code" property="provinceCode" />
+		<result column="province_name" property="provinceName" />
+		<result column="city_code" property="cityCode" />
+		<result column="city_name" property="cityName" />
+		<result column="area_code" property="areaCode" />
+		<result column="area_name" property="areaName" />
+		<result column="created_user" property="createdUser" />
+		<result column="created_time" property="createdTime" />
+		<result column="modified_user" property="modifiedUser" />
+		<result column="modified_time" property="modifiedTime" />
+	</resultMap>
+	
+	<select id="findByUid" resultMap="AddressEntityMap">
+	     select * from t_address where uid=#{uid} order by is_default desc, modified_time desc
+	</select> 
+	
+</mapper>
+
+

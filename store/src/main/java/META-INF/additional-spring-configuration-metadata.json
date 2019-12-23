@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "project.avat",
+    "type": "java.lang.String",
+    "description": "A description for 'project.avat'"
+  },
+  {
+    "name": "project.upload.vat",
+    "type": "java.lang.String",
+    "description": "A description for 'project.upload.vat'"
+  },
+  {
+    "name": "project.avatar-max-size",
+    "type": "java.lang.String",
+    "description": "A description for 'project.avatar-max-size'"
+  },
+  {
+    "name": "project.address-max-count",
+    "type": "java.lang.String",
+    "description": "A description for 'project.address-max-count'"
+  },
+  {
+    "name": "project.address.max-count",
+    "type": "java.lang.String",
+    "description": "A description for 'project.address.max-count'"
+  }
+]}
